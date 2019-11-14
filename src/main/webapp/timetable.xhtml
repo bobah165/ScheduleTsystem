@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
+
+
+<f:view>
+
+    <h:head>
+        #{timeTable.init()}
+
+        <title>Railway Timetable</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="websocket.js"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['img/favicon.ico']}"/>
+
+
+    </h:head>
+
+    <h:body>
+
+<!--        <div class="wrapper">-->
+<!--            <div id="content-table-timetable">-->
+
+<!--                <c:if test="${timetableBean.stationId == 0}">-->
+<!--                    <div class="dark-text">Timetable</div>-->
+<!--                    <div class="text-bad-news">Station was not selected!</div>-->
+<!--                </c:if>-->
+
+<!--                <c:if test="${timetableBean.stationId != 0}">-->
+
+<!--                    <c:if test="${timetableBean.connectionError == true}">-->
+<!--                        <div class="text-bad-news">Trains and Rails Server is not responding. Timetable can be out of date!</div>-->
+<!--                    </c:if>-->
+<!--                    <div id="ws-error-message" class="text-bad-news"></div>-->
+
+<!--                    <div id="timetable-station-name" class="dark-text">Timetable::${timetableBean.stationName}</div>-->
+                    <table id="table-ws-timetable-arr-dep" align="center">
+                        <tr>
+                            <th>ARRIVAL</th>
+                            <th>DEPARTURE</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- ARRIVALS -->
+                                <table id="table-ws-timetable-arrival" border="2">
+                                    <tr>
+<!--                                        <th>Route</th>-->
+                                        <th>Train</th>
+                                        <th>Arrival time</th>
+                                    </tr>
+                                    <ui:repeat value="${timeTable.scheduleList}" var="arrival">
+                                        <tr>
+<!--                                            <td>${arrival.arrivalTime}</td>-->
+<!--                                            <td>${arrival.idTrain}</td>-->
+
+                                            <td>${arrival.idTrain}</td>
+                                            <td>${arrival.arrivalTime}</td>
+                                        </tr>
+                                    </ui:repeat>
+
+                                </table>
+                            </td>
+                            <td>
+                                <!-- DEPARTURES -->
+                                <table id="table-ws-timetable-departure" border="2">
+                                    <tr>
+<!--                                        <th>Departure time</th>-->
+<!--                                        <th>Route</th>-->
+                                        <th>Train</th>
+                                        <th>Departure time</th>
+                                    </tr>
+
+                                    <ui:repeat value="${timeTable.scheduleList}" var="departure">
+                                        <tr>
+<!--                                            <td>${departure.departureTime}</td>-->
+
+                                            <td>${departure.idTrain}</td>
+                                            <td>${departure.departureTime}</td>
+<!--                                            <td>${departure.nameStation}</td>-->
+                                        </tr>
+                                    </ui:repeat>
+
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+<!--                </c:if>-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+    </h:body>
+</f:view>
+</html>

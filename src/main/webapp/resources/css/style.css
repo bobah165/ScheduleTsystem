@@ -1,0 +1,237 @@
+/*html,body{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.wrapper{*/
+/*    background-color: darkslateblue;*/
+/*    height: 100%;*/
+/*    font-size: medium;*/
+/*    color: indigo;*/
+/*}*/
+
+/*.long-wrapper{*/
+/*    background-color: darkslateblue;*/
+/*    font-size: medium;*/
+/*    color: indigo;*/
+/*}*/
+
+/*#header{*/
+/*    height: 84px;*/
+/*    background-color: darkslateblue;*/
+/*    font-size: 32pt;*/
+/*    color: #f63;*/
+/*    text-align: center;*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*header{*/
+/*    height: 84px;*/
+/*    background-color: darkslateblue;*/
+/*    font-size: 32pt;*/
+/*    color: #f63;*/
+/*    text-align: center;*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*.light-text{*/
+/*    color: azure;*/
+/*    font-size: 18pt;*/
+/*    padding-bottom: 8px;*/
+/*}*/
+
+/*.dark-text{*/
+/*    color: indigo;*/
+/*    font-size: 18pt;*/
+/*    padding-bottom: 8px;*/
+/*}*/
+
+/*.text-good-news{*/
+/*    color: indigo;*/
+/*    font-size: 16pt;*/
+/*    padding-bottom: 5px;*/
+/*    padding-left: 2px;*/
+/*}*/
+
+/*.text-bad-news{*/
+/*    color: darkred;*/
+/*    font-size: 16pt;*/
+/*    padding-bottom: 5px;*/
+/*    padding-left: 2px;*/
+/*}*/
+
+/*.text-bad-news-small{*/
+/*    color: darkred;*/
+/*    font-size: 14pt;*/
+/*    padding-bottom: 5px;*/
+/*    padding-left: 2px;*/
+/*}*/
+
+
+/*.dark-text-small{*/
+/*    color: indigo;*/
+/*    font-size: 13pt*/
+/*}*/
+
+/*#content{*/
+/*    margin-left: 2%;*/
+/*    margin-right: 2%;*/
+/*    margin-top: 2%;*/
+/*}*/
+
+/*.picture{*/
+/*    text-align: center;*/
+/*}*/
+
+/*#page-content{*/
+/*    float: right;*/
+/*    width: 78%;*/
+/*    min-height: 300px;*/
+/*    padding: 10px;*/
+/*    font-size: larger;*/
+/*}*/
+
+
+
+/*#empty-div{*/
+/*    height: 70px;*/
+/*    clear: both;*/
+/*}*/
+
+
+/*!*============ INDEX ============*!*/
+/*#content-index{*/
+/*    padding: 30px;*/
+/*    background: dodgerblue;*/
+/*}*/
+
+
+/*!* =====  TIME TABLE ===============*!*/
+/*#content-table-timetable{*/
+/*    padding: 30px;*/
+/*    background: dodgerblue;*/
+/*}*/
+/*#table-timetable-departure{*/
+/*    background: #add8e6;*/
+/*}*/
+/*#table-timetable-departure th{*/
+/*    padding: 2px;*/
+/*    color: green;*/
+/*    font-size: 13pt;*/
+/*}*/
+/*#table-timetable-departure td{*/
+/*    padding: 5px;*/
+/*}*/
+/*#table-timetable-arrival{*/
+/*    background: #add8e6;*/
+/*}*/
+/*#table-timetable-arrival th{*/
+/*    padding: 3px;*/
+/*    color: green;*/
+/*    font-size: 13pt;*/
+/*}*/
+/*#table-timetable-arrival td{*/
+/*    padding: 5px;*/
+/*}*/
+
+/*#table-timetable-arr-dep{*/
+
+/*}*/
+/*#table-timetable-arr-dep th{*/
+/*    color: indigo;*/
+/*    font-size: 13pt;*/
+/*    padding: 4px;*/
+/*}*/
+/*#table-timetable-arr-dep td{*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*!* =====  WS TIME TABLE ===============*!*/
+/*#content-ws-table-timetable{*/
+/*    padding: 30px;*/
+/*    background: dodgerblue;*/
+/*}*/
+/*#table-ws-timetable-departure{*/
+/*    background: #add8e6;*/
+/*}*/
+/*#table-ws-timetable-departure th{*/
+/*    padding: 2px;*/
+/*    color: green;*/
+/*    font-size: 13pt;*/
+/*}*/
+/*#table-ws-timetable-departure td{*/
+/*    padding: 5px;*/
+/*}*/
+/*#table-ws-timetable-arrival{*/
+/*    background: #add8e6;*/
+/*}*/
+/*#table-ws-timetable-arrival th{*/
+/*    padding: 3px;*/
+/*    color: green;*/
+/*    font-size: 13pt;*/
+/*}*/
+/*#table-ws-timetable-arrival td{*/
+/*    padding: 5px;*/
+/*}*/
+
+/*#table-ws-timetable-arr-dep{*/
+
+/*}*/
+/*#table-ws-timetable-arr-dep th{*/
+/*    color: indigo;*/
+/*    font-size: 13pt;*/
+/*    padding: 4px;*/
+/*}*/
+/*#table-ws-timetable-arr-dep td{*/
+/*    vertical-align: top;*/
+/*}*/
+/*!* =====  BUTTON ===============*!*/
+
+/*input[type="submit"]{*/
+/*    background: cornflowerblue;*/
+/*    color: indigo;*/
+/*    border: 2px solid indigo;*/
+/*    padding: 5px 12px;*/
+/*    margin-top: 10px;*/
+/*    font-size: 12pt;*/
+/*}*/
+/*input[type="submit"]:hover{*/
+/*    cursor:pointer;*/
+/*    border: 2px dashed indigo;*/
+/*}*/
+
+/*!* =====  FORM ELEMENTS ===============*!*/
+
+/*.form-element{*/
+/*    margin: 12px 0;*/
+/*}*/
+
+/*.form-element input{*/
+/*    font-size: 10pt;*/
+/*    color: indigo;*/
+
+/*}*/
+/*.form-element input:focus{*/
+/*    color: red;*/
+/*    font-size: 11pt;*/
+/*}*/
+
+/*.form-element .error-message{*/
+/*    color: darkred;*/
+/*    font-size: 13pt;*/
+
+/*}*/
+
+/*!* ======= MISC =======*!*/
+
+/*.ws-text{*/
+/*    color: #585858;*/
+/*    background: whitesmoke;*/
+/*    border: 2px solid #585858;*/
+/*    padding: 14px;*/
+/*    font-family: "Consolas";*/
+/*    font-size: 14px;*/
+/*    margin-top: 14px;*/
+/*    margin-bottom: 14px;*/
+/*}*/

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<f:view>
+
+    <h:head>
+        <title>Railway Timetable</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['img/favicon.ico']}"/>
+
+    </h:head>
+
+    <h:body>
+
+        <div class="wrapper">
+            <div id="header">Trains and Rails::Timetable</div>
+
+            <div id="content-index">
+                #{stationsBean.init()}
+                <c:if test="${stationsBean.connectionError == true}">
+                    <div class="dark-text">Timetable</div>
+                    <div class="text-bad-news">Server is not responding. Make sure that Trains and Rails server is running</div>
+                </c:if>
+
+                <c:if test="${stationsBean.connectionError == false}">
+                    <div class="dark-text">Select station to display timetable</div>
+
+                    <h:form>
+                        <div class="form-element">
+                            <h:selectOneMenu value="#{timetableBean.stationId}">
+                                <f:selectItems value="#{stationsBean.stations}" var="station"
+                                               itemLabel="#{station.stationName}" itemValue="#{station.stationId}"/>
+                            </h:selectOneMenu>
+                        </div>
+                        <h:commandButton value="Show timetable" action="timetable?faces-redirect=true"/>
+                    </h:form>
+                </c:if>
+
+            </div>
+        </div>
+    </h:body>
+
+</f:view>
+
+</html>
