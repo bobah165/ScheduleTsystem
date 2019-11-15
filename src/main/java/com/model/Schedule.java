@@ -12,8 +12,6 @@ import com.service.ScheduleRESTService;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import java.sql.Time;
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Named
@@ -27,13 +25,12 @@ public class Schedule {
     @JsonDeserialize(using = LocalTimeDeserializer.class)
     private LocalTime arrivalTime;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     @JsonSerialize(using = LocalTimeSerializer.class)
     @JsonDeserialize(using = LocalTimeDeserializer.class)
     private LocalTime departureTime;
 
-//    @JsonSerialize(using = LocalDateSerializer.class)
-//    @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDate date;
+   private int daysInWay;
 
 
     @Inject
@@ -48,12 +45,12 @@ public class Schedule {
         this.id = id;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public int getDays() {
+        return daysInWay;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDays(int days) {
+        this.daysInWay = days;
     }
 
     public int getIdTrain() {

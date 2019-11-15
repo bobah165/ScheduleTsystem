@@ -36,15 +36,12 @@ function onMessage(event) {
     // GOT TIMETABLE DTO -- NEED TO INJECT IT INTO TABLE
 
     var TimeTable = JSON.parse(event.data);
-    // var jsonStation = TimeTable.stations;
-    // var jsonArrArrivals = TimeTable.schedule;
-    // var jsonArrDepartures = TimeTable.departures;
 
     var jsonArrArrivals = TimeTable;
     var jsonArrDepartures = TimeTable;
 
     console.log('Timetable = ' + TimeTable);
-  //  console.log('Station = ' + jsonStation.stationName);
+  //  console.log('Station = ' + jsonEndStationName);
     console.log('Arrivals = ' + jsonArrArrivals);
     console.log('Departures = ' + jsonArrDepartures);
 
@@ -58,17 +55,15 @@ function onMessage(event) {
     // ERASE OLD INFO
     tableArrivals.innerHTML =
         '<tr>' +
-        // '<th>' + 'Arrival time' + '</th>' +
-        // '<th>' + 'Route' + '</th>' +
         '<th>' + 'Train' + '</th>' +
+        '<th>' + 'Station Name' + '</th>' +
         '<th>' + 'Arrival time' + '</th>' +
         '</tr>'
     ;
     tableDepartures.innerHTML =
         '<tr>' +
-        // '<th>' + 'Departure time' + '</th>' +
-        // '<th>' + 'Route' + '</th>' +
         '<th>' + 'Train' + '</th>' +
+        '<th>' + 'Station Name' + '</th>' +
         '<th>' + 'Departure time' + '</th>' +
         '</tr>'
     ;
@@ -80,10 +75,9 @@ function onMessage(event) {
 
         tableArrivals.innerHTML +=
             '<tr>' +
-            // '<td>' + json.arrivalTime + '</td>' +
             '<td>' + json.idTrain + '</td>' +
-            '<td>' + json.arrivalTime.toString()+ '</td>' +
-            // '<td>' + json.nameStation + '</td>' +
+            '<td>' + json.nameStation + '</td>' +
+            '<td>' + json.arrivalTime+ '</td>' +
             '</tr>'
         ;
     }
@@ -95,10 +89,9 @@ function onMessage(event) {
 
         tableDepartures.innerHTML +=
             '<tr>' +
-           // '<td>' + json.departureTime + '</td>' +
             '<td>' + json.idTrain + '</td>' +
+            '<td>' + json.nameStation + '</td>' +
             '<td>' + json.departureTime + '</td>' +
-           // '<td>' + json.nameStation + '</td>' +
             '</tr>'
         ;
     }

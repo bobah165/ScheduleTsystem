@@ -14,7 +14,6 @@ import org.apache.log4j.Logger;
 
 import javax.ejb.Stateless;
 import javax.ws.rs.core.MediaType;
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,4 +74,31 @@ public class ScheduleRESTService {
         }
         return trainsFromStation;
     }
+
+
+    public List<Schedule> getStationByTrainId(int trainId) {
+
+        List<Schedule> stations = getAllTrains();
+        List<Schedule> trainsFromStation = new ArrayList<>();
+
+        for ( Schedule schedule : stations ) {
+            if (schedule.getIdTrain() == trainId){
+                trainsFromStation.add(schedule);
+            }
+        }
+        return trainsFromStation;
+    }
+
+    public List<Schedule> getScheduleInLastDayOfWay(int trainId, int day){
+        List<Schedule> scheduleList = getStationByTrainId(trainId);
+        List<Schedule> trainsFromStation = new ArrayList<>();
+
+        for (Schedule schedule: scheduleList) {
+            if (schedule.getDays() == day) {
+                trainsFromStation.add(schedule);
+            }
+        }
+        return trainsFromStation;
+    }
+
 }

@@ -2,23 +2,25 @@ package com.websocket;
 
 
 import com.google.gson.Gson;
+import com.model.SchedulDTO;
 import com.model.Schedule;
+import com.model.TimeTable;
 import com.service.ScheduleRESTService;
+import com.util.ScheduleMapper;
 import org.apache.log4j.Logger;
 
-import javax.ejb.Singleton;
 import javax.inject.Inject;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @ServerEndpoint(value = "/websocket")
 public class TimetableWebsocket {
+
+    @Inject
+    private TimeTable timeTable;
 
     @Inject
     private ScheduleRESTService scheduleRESTService;
@@ -58,8 +60,14 @@ public class TimetableWebsocket {
         // UPDATE GUI
         try {
 
-            List<Schedule> schedules = scheduleRESTService.getAllTrains();
-            String strTimetable = new Gson().toJson(schedules);
+            List<Schedule> schedules = scheduleRESTService.getTrainsByStationName(timeTable.getStationName());
+            List<SchedulDTO> schedulDTOS = new ArrayList<>();
+            ScheduleMapper scheduleMapper = new ScheduleMapper();
+            for (Schedule schedule:schedules) {
+                schedule.setNameStation(timeTable.getEndStationName().get(schedule.getIdTrain()));
+                schedulDTOS.add(scheduleMapper.mapEntityToDto(schedule));
+            }
+            String strTimetable = new Gson().toJson(schedulDTOS);
             logger.info("Mapped object :" + strTimetable);
             this.sendMessageToBrowser(strTimetable);
 

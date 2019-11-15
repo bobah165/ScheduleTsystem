@@ -19,28 +19,14 @@
         <h:outputScript library="js" name="websocket.js"/>
         <link rel="shortcut icon" type="image/x-icon" href="#{resource['img/favicon.ico']}"/>
 
-
     </h:head>
 
     <h:body>
 
-<!--        <div class="wrapper">-->
-<!--            <div id="content-table-timetable">-->
+        <div align="center" id="timetable-station-name" class="dark-text">Timetable::${timeTable.stationName}</div>
 
-<!--                <c:if test="${timetableBean.stationId == 0}">-->
-<!--                    <div class="dark-text">Timetable</div>-->
-<!--                    <div class="text-bad-news">Station was not selected!</div>-->
-<!--                </c:if>-->
 
-<!--                <c:if test="${timetableBean.stationId != 0}">-->
-
-<!--                    <c:if test="${timetableBean.connectionError == true}">-->
-<!--                        <div class="text-bad-news">Trains and Rails Server is not responding. Timetable can be out of date!</div>-->
-<!--                    </c:if>-->
-<!--                    <div id="ws-error-message" class="text-bad-news"></div>-->
-
-<!--                    <div id="timetable-station-name" class="dark-text">Timetable::${timetableBean.stationName}</div>-->
-                    <table id="table-ws-timetable-arr-dep" align="center">
+        <table id="table-ws-timetable-arr-dep" align="center">
                         <tr>
                             <th>ARRIVAL</th>
                             <th>DEPARTURE</th>
@@ -50,16 +36,15 @@
                                 <!-- ARRIVALS -->
                                 <table id="table-ws-timetable-arrival" border="2">
                                     <tr>
-<!--                                        <th>Route</th>-->
+
                                         <th>Train</th>
+                                        <th>Sttion Name</th>
                                         <th>Arrival time</th>
                                     </tr>
                                     <ui:repeat value="${timeTable.scheduleList}" var="arrival">
                                         <tr>
-<!--                                            <td>${arrival.arrivalTime}</td>-->
-<!--                                            <td>${arrival.idTrain}</td>-->
-
                                             <td>${arrival.idTrain}</td>
+                                            <td>${timeTable.endStationName}</td>
                                             <td>${arrival.arrivalTime}</td>
                                         </tr>
                                     </ui:repeat>
@@ -70,19 +55,16 @@
                                 <!-- DEPARTURES -->
                                 <table id="table-ws-timetable-departure" border="2">
                                     <tr>
-<!--                                        <th>Departure time</th>-->
-<!--                                        <th>Route</th>-->
                                         <th>Train</th>
+                                        <th>Station Name</th>
                                         <th>Departure time</th>
                                     </tr>
 
                                     <ui:repeat value="${timeTable.scheduleList}" var="departure">
                                         <tr>
-<!--                                            <td>${departure.departureTime}</td>-->
-
                                             <td>${departure.idTrain}</td>
+                                            <td>${timeTable.endStationName}</td>
                                             <td>${departure.departureTime}</td>
-<!--                                            <td>${departure.nameStation}</td>-->
                                         </tr>
                                     </ui:repeat>
 
@@ -90,12 +72,6 @@
                             </td>
                         </tr>
                     </table>
-
-<!--                </c:if>-->
-
-
-<!--            </div>-->
-<!--        </div>-->
     </h:body>
 </f:view>
 </html>

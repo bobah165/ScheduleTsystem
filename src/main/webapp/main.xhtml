@@ -7,41 +7,31 @@
 
 <f:view>
 
+
     <h:head>
         <title>Railway Timetable</title>
         <h:outputStylesheet library="css" name="style.css"/>
-        <link rel="shortcut icon" type="image/x-icon" href="#{resource['img/favicon.ico']}"/>
+
 
     </h:head>
 
     <h:body>
 
-        <div class="wrapper">
-            <div id="header">Trains and Rails::Timetable</div>
-
-            <div id="content-index">
-                #{stationsBean.init()}
-                <c:if test="${stationsBean.connectionError == true}">
-                    <div class="dark-text">Timetable</div>
-                    <div class="text-bad-news">Server is not responding. Make sure that Trains and Rails server is running</div>
-                </c:if>
-
-                <c:if test="${stationsBean.connectionError == false}">
-                    <div class="dark-text">Select station to display timetable</div>
-
-                    <h:form>
-                        <div class="form-element">
-                            <h:selectOneMenu value="#{timetableBean.stationId}">
-                                <f:selectItems value="#{stationsBean.stations}" var="station"
-                                               itemLabel="#{station.stationName}" itemValue="#{station.stationId}"/>
-                            </h:selectOneMenu>
-                        </div>
-                        <h:commandButton value="Show timetable" action="timetable?faces-redirect=true"/>
-                    </h:form>
-                </c:if>
-
-            </div>
+        <div class="top_bar"></div>
+        <div class="welcome">
+            <h:link type="image" href="#{resource['ROOT/train.jpg']}"/>
+<!--            <h:link src='/resource/ROOT/train.jpg'  width="600" height="250"/>-->
         </div>
+
+
+
+        <div align="center">
+            <h:form>
+                <h:inputText value="#{timeTable.stationName}"/>
+               <br><h:commandLink value="Enter" id="btn" action="timetable"/></br>
+            </h:form>
+        </div>
+
     </h:body>
 
 </f:view>

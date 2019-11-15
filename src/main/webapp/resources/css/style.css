@@ -1,237 +1,115 @@
-/*html,body{*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    height: 100%;*/
-/*}*/
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+th, td:first-child {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+td {
+    background: #D8E6F3;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
 
-/*.wrapper{*/
-/*    background-color: darkslateblue;*/
-/*    height: 100%;*/
-/*    font-size: medium;*/
-/*    color: indigo;*/
-/*}*/
+.btn {
+    /*display: inline-block; !* Строчно-блочный элемент *!*/
+    /*background: #8C959D; !* Серый цвет фона *!*/
+    /*color: #fff; !* Белый цвет текста *!*/
+    /*padding: 1rem 1.5rem; !* Поля вокруг текста *!*/
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+}
 
-/*.long-wrapper{*/
-/*    background-color: darkslateblue;*/
-/*    font-size: medium;*/
-/*    color: indigo;*/
-/*}*/
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/*#header{*/
-/*    height: 84px;*/
-/*    background-color: darkslateblue;*/
-/*    font-size: 32pt;*/
-/*    color: #f63;*/
-/*    text-align: center;*/
-/*    padding-top: 20px;*/
-/*}*/
-
-/*header{*/
-/*    height: 84px;*/
-/*    background-color: darkslateblue;*/
-/*    font-size: 32pt;*/
-/*    color: #f63;*/
-/*    text-align: center;*/
-/*    padding-top: 20px;*/
-/*}*/
-
-/*.light-text{*/
-/*    color: azure;*/
-/*    font-size: 18pt;*/
-/*    padding-bottom: 8px;*/
-/*}*/
-
-/*.dark-text{*/
-/*    color: indigo;*/
-/*    font-size: 18pt;*/
-/*    padding-bottom: 8px;*/
-/*}*/
-
-/*.text-good-news{*/
-/*    color: indigo;*/
-/*    font-size: 16pt;*/
-/*    padding-bottom: 5px;*/
-/*    padding-left: 2px;*/
-/*}*/
-
-/*.text-bad-news{*/
-/*    color: darkred;*/
-/*    font-size: 16pt;*/
-/*    padding-bottom: 5px;*/
-/*    padding-left: 2px;*/
-/*}*/
-
-/*.text-bad-news-small{*/
-/*    color: darkred;*/
-/*    font-size: 14pt;*/
-/*    padding-bottom: 5px;*/
-/*    padding-left: 2px;*/
-/*}*/
-
-
-/*.dark-text-small{*/
-/*    color: indigo;*/
-/*    font-size: 13pt*/
-/*}*/
-
-/*#content{*/
-/*    margin-left: 2%;*/
-/*    margin-right: 2%;*/
-/*    margin-top: 2%;*/
-/*}*/
-
-/*.picture{*/
-/*    text-align: center;*/
-/*}*/
-
-/*#page-content{*/
-/*    float: right;*/
-/*    width: 78%;*/
-/*    min-height: 300px;*/
-/*    padding: 10px;*/
-/*    font-size: larger;*/
-/*}*/
+.welcome h1 {
+    display: none;
+}
 
 
 
-/*#empty-div{*/
-/*    height: 70px;*/
-/*    clear: both;*/
-/*}*/
+nav {
+    height: 60px;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
 
+nav ul.menu {
+    text-align: center;
+    font-size: 0;
+}
 
-/*!*============ INDEX ============*!*/
-/*#content-index{*/
-/*    padding: 30px;*/
-/*    background: dodgerblue;*/
-/*}*/
+nav ul.menu li {
+    display: inline-block;
+    font-size: 13px;
+}
 
+nav ul.menu li a {
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Lobster', cursive;
+    font-size: 1.3em;
+    text-decoration: none;
+    padding-right: 22px;
+    padding-left: 22px;
+    display: block;
+    min-height: 60px;
+    line-height: 60px;
+}
 
-/*!* =====  TIME TABLE ===============*!*/
-/*#content-table-timetable{*/
-/*    padding: 30px;*/
-/*    background: dodgerblue;*/
-/*}*/
-/*#table-timetable-departure{*/
-/*    background: #add8e6;*/
-/*}*/
-/*#table-timetable-departure th{*/
-/*    padding: 2px;*/
-/*    color: green;*/
-/*    font-size: 13pt;*/
-/*}*/
-/*#table-timetable-departure td{*/
-/*    padding: 5px;*/
-/*}*/
-/*#table-timetable-arrival{*/
-/*    background: #add8e6;*/
-/*}*/
-/*#table-timetable-arrival th{*/
-/*    padding: 3px;*/
-/*    color: green;*/
-/*    font-size: 13pt;*/
-/*}*/
-/*#table-timetable-arrival td{*/
-/*    padding: 5px;*/
-/*}*/
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+ul.menu > li {
+    float: outside;
+    position: relative;
+}
 
-/*#table-timetable-arr-dep{*/
+ul.menu > li > a:hover {
+    background-color: white;
+}
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 37px;
+    padding-left: 0px;
+    background-color: white;
+    /*border: 1px solid white;*/
+}
 
-/*}*/
-/*#table-timetable-arr-dep th{*/
-/*    color: indigo;*/
-/*    font-size: 13pt;*/
-/*    padding: 4px;*/
-/*}*/
-/*#table-timetable-arr-dep td{*/
-/*    vertical-align: top;*/
-/*}*/
+ul.submenu > li {
+    display: block;
+}
+ul.submenu > li > a {
+    display: block;
+    padding: 1px;
+    color: white;
+    background-color: white;
+    text-decoration: none;
+}
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+}
 
-/*!* =====  WS TIME TABLE ===============*!*/
-/*#content-ws-table-timetable{*/
-/*    padding: 30px;*/
-/*    background: dodgerblue;*/
-/*}*/
-/*#table-ws-timetable-departure{*/
-/*    background: #add8e6;*/
-/*}*/
-/*#table-ws-timetable-departure th{*/
-/*    padding: 2px;*/
-/*    color: green;*/
-/*    font-size: 13pt;*/
-/*}*/
-/*#table-ws-timetable-departure td{*/
-/*    padding: 5px;*/
-/*}*/
-/*#table-ws-timetable-arrival{*/
-/*    background: #add8e6;*/
-/*}*/
-/*#table-ws-timetable-arrival th{*/
-/*    padding: 3px;*/
-/*    color: green;*/
-/*    font-size: 13pt;*/
-/*}*/
-/*#table-ws-timetable-arrival td{*/
-/*    padding: 5px;*/
-/*}*/
-
-/*#table-ws-timetable-arr-dep{*/
-
-/*}*/
-/*#table-ws-timetable-arr-dep th{*/
-/*    color: indigo;*/
-/*    font-size: 13pt;*/
-/*    padding: 4px;*/
-/*}*/
-/*#table-ws-timetable-arr-dep td{*/
-/*    vertical-align: top;*/
-/*}*/
-/*!* =====  BUTTON ===============*!*/
-
-/*input[type="submit"]{*/
-/*    background: cornflowerblue;*/
-/*    color: indigo;*/
-/*    border: 2px solid indigo;*/
-/*    padding: 5px 12px;*/
-/*    margin-top: 10px;*/
-/*    font-size: 12pt;*/
-/*}*/
-/*input[type="submit"]:hover{*/
-/*    cursor:pointer;*/
-/*    border: 2px dashed indigo;*/
-/*}*/
-
-/*!* =====  FORM ELEMENTS ===============*!*/
-
-/*.form-element{*/
-/*    margin: 12px 0;*/
-/*}*/
-
-/*.form-element input{*/
-/*    font-size: 10pt;*/
-/*    color: indigo;*/
-
-/*}*/
-/*.form-element input:focus{*/
-/*    color: red;*/
-/*    font-size: 11pt;*/
-/*}*/
-
-/*.form-element .error-message{*/
-/*    color: darkred;*/
-/*    font-size: 13pt;*/
-
-/*}*/
-
-/*!* ======= MISC =======*!*/
-
-/*.ws-text{*/
-/*    color: #585858;*/
-/*    background: whitesmoke;*/
-/*    border: 2px solid #585858;*/
-/*    padding: 14px;*/
-/*    font-family: "Consolas";*/
-/*    font-size: 14px;*/
-/*    margin-top: 14px;*/
-/*    margin-bottom: 14px;*/
-/*}*/
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}
